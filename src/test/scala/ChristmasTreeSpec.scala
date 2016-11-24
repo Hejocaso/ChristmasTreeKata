@@ -7,7 +7,7 @@ class ChristmasTreeSpec extends WordSpecLike with Matchers {
   "Calling ChristmasTree" should {
     "generate a decorated Christmas tree of an arbitary height and decors" in {
       val christmasTree = new ChristmasTree
-      christmasTree.decoratedTree(7,2) should be ("")
+      christmasTree.decoratedTree(7,2) shouldBe (true)
     }
 
     "return 'That's not a Christmas Tree.' if height is 0" in {

@@ -9,7 +9,16 @@ class ChristmasTree extends App {
 
   def decoratedTree(height: Int, deco: Int) = height match {
     case 0 => "That's not a Christmas Tree."
-    case _ => generateTree(height, deco)
+    case _ => star(height); generateTree(height, deco); true
+  }
+
+  def star(height: Int) = {
+    for(i <- 0 until 1) {
+      for (j <- 1 to height - i) {
+        print(" ")
+      }
+      println("@")
+    }
   }
 
   def generateTree(height:Int, deco: Int) = {
@@ -18,9 +27,9 @@ class ChristmasTree extends App {
       for (j <- 1 to height - i) {
         print(" ")
       }
-      for (j <- 1 to (2 * i + 1)) {
-        //prints tildes
-        /*The (2 * i + 1) will add 2 to the previous line
+      for (j <- 1 to (2 * i + 1)) { //prints tildes
+        /*
+        * The (2 * i + 1) will add 2 to the previous line
         * e.g.
         * when i = 2 then result = 5
         * when i = 3 then result = 7
