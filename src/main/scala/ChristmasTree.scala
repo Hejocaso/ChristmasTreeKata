@@ -2,22 +2,20 @@
   * Created by helen on 24/11/16.
   */
 class ChristmasTree extends App {
-  val Star = "@"
-  val FirstRow = "~"
-  val Trunk = "#"
-  val list = List()
+  val star = "@"
+  val trunk = "#"
 
   def decoratedTree(height: Int, deco: Int) = height match {
     case 0 => "That's not a Christmas Tree."
-    case _ => star(height); generateTree(height, deco); true
+    case _ => decor(height, "@"); generateTree(height, deco); decor(height, "#"); true
   }
 
-  def star(height: Int) = {
-    for(i <- 0 until 1) {
+  def decor(height: Int, symbol: String) = {
+    for (i <- 0 until 1) {
       for (j <- 1 to height - i) {
         print(" ")
       }
-      println("@")
+      println(symbol)
     }
   }
 

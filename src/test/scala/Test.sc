@@ -22,6 +22,7 @@ def star(height: Int) = {
   }
 }
 
+
 star(7)
 tree(7)
 
