@@ -12,23 +12,22 @@ class ChristmasTree extends App {
     case _ => generateTree(height, deco)
   }
 
-//  def generateTree(height: Int, deco: Int) = {
-//    println(Star)
-//    println(FirstRow)
-//    for (i <- 1 to height) yield
-//    println(Trunk)
-//  }
-
   def generateTree(height:Int, deco: Int) = {
-    if (height == 1 && deco == 0) {
-      println("@\n" + "~\n" + "#")
-    } else {
-      println("@\n"+ "~")
-      for (i <- 1 to height) {
-        for (j <- 0 to i) yield print("~")
-        println("")
+    for (i <- 0 until height) {
+      //prints how many spaces per line. The (height - i) will do the opposite of 1 to i
+      for (j <- 1 to height - i) {
+        print(" ")
       }
-      println("#")
+      for (j <- 1 to (2 * i + 1)) {
+        //prints tildes
+        /*The (2 * i + 1) will add 2 to the previous line
+        * e.g.
+        * when i = 2 then result = 5
+        * when i = 3 then result = 7
+        * */
+        print("~")
+      }
+      println("")
     }
   }
 }
